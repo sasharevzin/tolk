@@ -20,7 +20,7 @@ module Tolk
 
       module ClassMethods
         def next_migration_number(dirname)
-          if ActiveRecord::Base.timestamped_migrations
+          if ActiveRecord.timestamped_migrations
             migration_number = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
             migration_number += 1
             migration_number.to_s
